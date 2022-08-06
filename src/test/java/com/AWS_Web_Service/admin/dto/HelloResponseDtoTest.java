@@ -3,7 +3,7 @@ package com.AWS_Web_Service.admin.dto;
 import com.AWS_Web_Service.admin.web.dto.HelloResponseDto;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 

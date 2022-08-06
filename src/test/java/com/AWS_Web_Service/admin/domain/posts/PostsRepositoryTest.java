@@ -1,27 +1,27 @@
 package com.AWS_Web_Service.admin.domain.posts;
 
-import org.junit.After;
-import org.junit.Test;
-import org.junit.runner.RunWith;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import java.time.LocalDateTime;
 import java.util.List;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
-@RunWith(SpringRunner.class)
+@ExtendWith(SpringExtension.class)
 @SpringBootTest
 public class PostsRepositoryTest {
 
     @Autowired
     PostsRepository postsRepository;
 
-    @After // Junit에서 단위 테스트가 끝날 때마다 수행되는 메소드를 지정해주는 어노테이션
+    @AfterEach // Junit에서 단위 테스트가 끝날 때마다 수행되는 메소드를 지정해주는 어노테이션
     public void cleanup() {
-        postsRepository.deleteAll(); // 테스트간 데이터 침범을 막기위해 @After 어노테이션과 함께 사용하는 코드
+        postsRepository.deleteAll(); // 테스트간 데이터 침범을 막기위해 @AfterEach 어노테이션과 함께 사용하는 코드
     }
 
     @Test
